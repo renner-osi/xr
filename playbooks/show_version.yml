@@ -1,0 +1,11 @@
+---
+- hosts: all
+  gather_facts: false
+  tasks:
+
+    - iosxr_command:
+        commands:
+          - show version
+      register: result
+    - debug: var=result
+
